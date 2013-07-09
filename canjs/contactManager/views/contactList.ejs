@@ -1,0 +1,20 @@
+<a href="#/new" class="btn btn-primary add" >Add Contact</a>
+<hr />
+<table class="table striped">
+	<thead>
+		<tr> 
+			<th>Name</th><th>Email</th><th>Phone</th><th>Address</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% list(contacts, function(contact){ %>
+			<tr>
+				<td> <%= contact.name %></td>
+				<td> <%= contact.email %></td>
+				<td> <%= contact.phone %></td>
+				<td> <%= contact.address %></td>
+				<td><button type="button" class="btn btn-primary edit" value="<%= contact.id %>">Edit</button></td>
+			</tr>
+		<% }) %>
+	</tbody>
+</table>

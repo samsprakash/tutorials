@@ -1,0 +1,18 @@
+<form class="edit-contact-form">
+	<legend><%= contact.attr('id') ? 'Edit' : 'New' %> Contact</legend>
+	<label>Name</label>
+	<input name="name" type="text" value="<%= contact.attr('name') ? contact.name : '' %>">
+	<label>Email</label>
+	<input name="email" type="text" value="<%= contact.attr('email') ? contact.email: '' %>">
+	<label>Phone</label>
+	<input name="phone" type="text" value="<%= contact.attr('phone')? contact.phone : '' %>">
+	<label>Address</label>
+	<input name="address" type="text" value="<%= contact.attr('address') ? contact.address : '' %>">
+	<hr />
+	<button type="button" class="btn btn-primary save"><%= contact.attr('id') ? 'Update' : 'Create' %></button>
+	<% if(contact.attr('id')) { %>
+		<input type="hidden" name="id" value="<%= contact.id %>" />
+		<button type="button"  class="btn btn-danger delete">Delete</button>
+	<% }; %> 
+	<a href="#" class="btn btn-primary cancel" >Cancel</a>
+</form>
